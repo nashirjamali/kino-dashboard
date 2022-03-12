@@ -20,7 +20,7 @@ const colors = {
 
 const fonts = {
   heading: "Cairo, sans-serif",
-  body: "Open Sans, sans-serif",
+  body: "Open Sans, Cairo, sans-serif",
 };
 
 const customTheme = {
