@@ -4,7 +4,7 @@ import Body from '../layouts/Body';
 
 function Index() {
   return (
-    <Body title="Trending">
+    <Body title="Home">
       <Box>
         <Heading>Ini Halaman Home</Heading>
         <Text>Hello</Text>
