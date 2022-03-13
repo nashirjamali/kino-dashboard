@@ -1,66 +1,75 @@
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
-import { CommentIcon, DashboardIcon, EmailIcon } from './icons';
+import NextLink from 'next/link';
+import { Box, CloseButton, Flex, Icon, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { FiCompass, FiHome, FiSettings, FiStar, FiTrendingUp } from 'react-icons/fi';
 
-export default function Sidebar() {
+const LinkItems = [
+  { name: 'Home', icon: FiHome, href: '/' },
+  { name: 'Trending', icon: FiTrendingUp, href: '/trendings' },
+  { name: 'Explore', icon: FiCompass, href: '/explores' },
+  { name: 'Favourites', icon: FiStar, href: '/favourites' },
+  { name: 'Settings', icon: FiSettings, href: '/settings' },
+];
+
+function SideBar({ onClose, ...rest }) {
   return (
-    <Box>
-      <Box display={{ sm: 'none', xl: 'block' }} position="fixed">
-        <Box bg="white" w="345px" maxW="345px" h="100vh" pl="50px" pr="20px">
-          {/* Header */}
-          <Box py="30px">
-            <Heading>Kino</Heading>
-          </Box>
-
-          {/* Menu */}
-          <Box my="12px">
-            <Text color="grey_02" fontSize="16px" fontWeight="bold">
-              Main Menu
-            </Text>
-            <Box id="menu-list" mt="25px">
-              <Link href="/" _hover={{ textDecoration: 'none' }}>
-                <Flex py="8px" my="14px" color="primary" align="center">
-                  <DashboardIcon w="28px" h="28px" />
-                  <Text
-                    ml="26px"
-                    flex={1}
-                    fontFamily="Cairo"
-                    fontWeight="bold"
-                    fontSize="18px"
-                  >
-                    Dashboard
-                  </Text>
-                </Flex>
-              </Link>
-              <Link href="/" _hover={{ textDecoration: 'none' }}>
-                <Flex py="8px" my="14px" color="grey_01" align="center">
-                  <EmailIcon w="28px" h="28px" />
-                  <Text
-                    ml="26px"
-                    fontFamily="Cairo"
-                    fontWeight="semibold"
-                    fontSize="18px"
-                  >
-                    Email
-                  </Text>
-                </Flex>
-              </Link>
-              <Link href="/" _hover={{ textDecoration: 'none' }}>
-                <Flex py="8px" my="14px" color="grey_01" align="center">
-                  <CommentIcon w="28px" h="28px" />
-                  <Text
-                    ml="26px"
-                    fontFamily="Cairo"
-                    fontWeight="semibold"
-                    fontSize="18px"
-                  >
-                    Chat
-                  </Text>
-                </Flex>
-              </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+    <Box
+      transition="3s ease"
+      bg={useColorModeValue('white', 'gray.900')}
+      borderRight="1px"
+      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+      w={{ base: 'full', md: 60 }}
+      pos="fixed"
+      h="full"
+      {...rest}
+    >
+      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+          Kino
+        </Text>
+        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+      </Flex>
+      {LinkItems.map((link) => (
+        <NavItem key={link.name} icon={link.icon} href={link.href}>
+          {link.name}
+        </NavItem>
+      ))}
     </Box>
   );
 }
+
+function NavItem({ href, icon, _target, children, ...rest }) {
+  return (
+    <NextLink href={href} passHref scroll={false}>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <Link target={_target} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+        <Flex
+          align="center"
+          p="4"
+          mx="4"
+          borderRadius="lg"
+          role="group"
+          cursor="pointer"
+          _hover={{
+            bg: 'primary',
+            color: 'white',
+          }}
+          {...rest}
+        >
+          {icon && (
+            <Icon
+              mr="4"
+              fontSize="16"
+              _groupHover={{
+                color: 'white',
+              }}
+              as={icon}
+            />
+          )}
+          {children}
+        </Flex>
+      </Link>
+    </NextLink>
+  );
+}
+
+export default SideBar;

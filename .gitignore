@@ -34,5 +34,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# another lock files
+yarn.lock
+yarn-error.lock
+
 # lint
 .eslintcache
