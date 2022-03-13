@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "prettier --write --config .prettierrc.json \"**/*.jsx\" \"**/*.js\"",
+    "lint": "eslint --fix --config .eslintrc.json \"**/*.jsx\" \"**/*.js\"",
+    "format": "npm run prettier && npm run lint"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
