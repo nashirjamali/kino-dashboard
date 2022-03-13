@@ -1,11 +1,10 @@
-import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
-import { RiDashboard2Line, RiMessage2Line } from "react-icons/ri";
-import { CommentIcon, DashboardIcon, EmailIcon } from "./icons";
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
+import { CommentIcon, DashboardIcon, EmailIcon } from './icons';
 
 export default function Sidebar() {
   return (
     <Box>
-      <Box display={{ sm: "none", xl: "block" }} position="fixed">
+      <Box display={{ sm: 'none', xl: 'block' }} position="fixed">
         <Box bg="white" w="345px" maxW="345px" h="100vh" pl="50px" pr="20px">
           {/* Header */}
           <Box py="30px">
@@ -18,7 +17,7 @@ export default function Sidebar() {
               Main Menu
             </Text>
             <Box id="menu-list" mt="25px">
-              <Link href="/" _hover={{ textDecoration: "none" }}>
+              <Link href="/" _hover={{ textDecoration: 'none' }}>
                 <Flex py="8px" my="14px" color="primary" align="center">
                   <DashboardIcon w="28px" h="28px" />
                   <Text
@@ -32,7 +31,7 @@ export default function Sidebar() {
                   </Text>
                 </Flex>
               </Link>
-              <Link href="/" _hover={{ textDecoration: "none" }}>
+              <Link href="/" _hover={{ textDecoration: 'none' }}>
                 <Flex py="8px" my="14px" color="grey_01" align="center">
                   <EmailIcon w="28px" h="28px" />
                   <Text
@@ -45,7 +44,7 @@ export default function Sidebar() {
                   </Text>
                 </Flex>
               </Link>
-              <Link href="/" _hover={{ textDecoration: "none" }}>
+              <Link href="/" _hover={{ textDecoration: 'none' }}>
                 <Flex py="8px" my="14px" color="grey_01" align="center">
                   <CommentIcon w="28px" h="28px" />
                   <Text

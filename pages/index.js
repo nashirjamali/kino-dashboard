@@ -1,7 +1,8 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
-import Admin from "../layouts/Admin";
+import React from 'react';
+import { Box, Heading, Text } from '@chakra-ui/react';
+import Admin from '../layouts/Admin';
 
-const Index = () => {
+const Index = function () {
   return (
     <Box bg="primary">
       <Heading>Hello</Heading>

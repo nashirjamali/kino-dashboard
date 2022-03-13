@@ -1,9 +1,9 @@
-import React from "react";
-import { createIcon } from "@chakra-ui/react";
+import React from 'react';
+import { createIcon } from '@chakra-ui/react';
 
 const EmailIcon = createIcon({
-  displayName: "EmailIcon",
-  viewBox: "0 0 28 28",
+  displayName: 'EmailIcon',
+  viewBox: '0 0 28 28',
   path: [
     <path
       d="M13.9999 13.8376L25.3829 7.62872C25.0209 6.4376 24.2865 5.39389 23.2877 4.65081C22.2889 3.90772 21.0782 3.50438 19.8333 3.5H8.1666C6.92169 3.50438 5.71097 3.90772 4.71215 4.65081C3.71333 5.39389 2.97902 6.4376 2.617 7.62872L13.9999 13.8376Z"

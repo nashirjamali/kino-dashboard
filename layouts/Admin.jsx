@@ -1,5 +1,5 @@
-import Sidebar from "../components/Sidebar";
-import { Flex, Box } from "@chakra-ui/react";
+import Sidebar from '../components/Sidebar';
+import { Flex, Box } from '@chakra-ui/react';
 
 export default function Admin() {
   return (
