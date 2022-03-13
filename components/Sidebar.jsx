@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { RiDashboard2Line, RiMessage2Line } from "react-icons/ri";
+import { CommentIcon, DashboardIcon, EmailIcon } from "./icons";
 
 export default function Sidebar() {
   return (
@@ -19,9 +20,9 @@ export default function Sidebar() {
             <Box id="menu-list" mt="25px">
               <Link href="/" _hover={{ textDecoration: "none" }}>
                 <Flex py="8px" my="14px" color="primary" align="center">
-                  <RiDashboard2Line size={28} />
+                  <DashboardIcon w="28px" h="28px" />
                   <Text
-                    ml="8px"
+                    ml="26px"
                     flex={1}
                     fontFamily="Cairo"
                     fontWeight="bold"
@@ -33,14 +34,27 @@ export default function Sidebar() {
               </Link>
               <Link href="/" _hover={{ textDecoration: "none" }}>
                 <Flex py="8px" my="14px" color="grey_01" align="center">
-                  <RiMessage2Line size={28} />
+                  <EmailIcon w="28px" h="28px" />
                   <Text
-                    ml="8px"
+                    ml="26px"
                     fontFamily="Cairo"
-                    fontWeight="bold"
+                    fontWeight="semibold"
                     fontSize="18px"
                   >
                     Email
+                  </Text>
+                </Flex>
+              </Link>
+              <Link href="/" _hover={{ textDecoration: "none" }}>
+                <Flex py="8px" my="14px" color="grey_01" align="center">
+                  <CommentIcon w="28px" h="28px" />
+                  <Text
+                    ml="26px"
+                    fontFamily="Cairo"
+                    fontWeight="semibold"
+                    fontSize="18px"
+                  >
+                    Chat
                   </Text>
                 </Flex>
               </Link>
