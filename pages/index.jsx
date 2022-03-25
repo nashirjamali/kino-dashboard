@@ -23,6 +23,26 @@ function Index() {
         </GridItem>
         <GridItem>
           <FeatureCard
+            featureElement={
+              <CircularProgress value={62} thickness="14px" size="86px" color="accent_01" capIsRound={true}>
+                <CircularProgressLabel color="accent_01" fontFamily="Cairo" fontWeight="bold">
+                  38%
+                </CircularProgressLabel>
+              </CircularProgress>
+            }
+            featureData={84}
+            featureTitle="Unread Emails"
+          />
+        </GridItem>
+        <GridItem>
+          <FeatureCard
+            featureElement={<ImportantEmailIcon w="86px" h="86px" />}
+            featureData={519}
+            featureTitle="Important Email"
+          />
+        </GridItem>
+        <GridItem>
+          <FeatureCard
             featureElement={<ImportantEmailIcon w="86px" h="86px" />}
             featureData={519}
             featureTitle="Important Email"
