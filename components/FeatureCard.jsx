@@ -4,7 +4,7 @@ import { ImportantEmailIcon } from './icons';
 
 function FeatureCard({ featureElement, featureData, featureTitle }) {
   return (
-    <Box p="30px" bg="white" rounded="2xl" w="340px" boxShadow="sm">
+    <Box p="30px" bg="white" rounded="2xl" boxShadow="sm">
       <Grid templateColumns="repeat(2, 1fr)">
         <GridItem>
           <Center>{featureElement}</Center>

@@ -1,14 +1,14 @@
+import { Box, CircularProgress, CircularProgressLabel, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { Box, CircularProgress, CircularProgressLabel, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
-import Body from '../layouts/Body';
 import FeatureCard from '../components/FeatureCard';
 import { ImportantEmailIcon } from '../components/icons';
+import Body from '../layouts/Body';
 
 function Index() {
   return (
     <Body title="Home">
-      <Grid templateColumns="repeat(4, 1fr)" gap="38px">
-        <GridItem>
+      <Stack direction={['column', 'row']} spacing="24px" align="stretch">
+        <Box flex={1}>
           <FeatureCard
             featureElement={
               <CircularProgress value={62} thickness="14px" size="86px" color="accent_02" capIsRound={true}>
@@ -20,8 +20,8 @@ function Index() {
             featureData={215}
             featureTitle="New Email"
           />
-        </GridItem>
-        <GridItem>
+        </Box>
+        <Box flex={1}>
           <FeatureCard
             featureElement={
               <CircularProgress value={62} thickness="14px" size="86px" color="accent_01" capIsRound={true}>
@@ -33,22 +33,22 @@ function Index() {
             featureData={84}
             featureTitle="Unread Emails"
           />
-        </GridItem>
-        <GridItem>
+        </Box>
+        <Box flex={1}>
           <FeatureCard
             featureElement={<ImportantEmailIcon w="86px" h="86px" />}
             featureData={519}
             featureTitle="Important Email"
           />
-        </GridItem>
-        <GridItem>
+        </Box>
+        <Box flex={1}>
           <FeatureCard
             featureElement={<ImportantEmailIcon w="86px" h="86px" />}
             featureData={519}
             featureTitle="Important Email"
           />
-        </GridItem>
-      </Grid>
+        </Box>
+      </Stack>
     </Body>
   );
 }
